@@ -1,0 +1,57 @@
+PROCEDURE DotProduct( Var vec1 ,vec2 : integer)
+
+VAR
+  ps : intger ;
+BEGIN
+    ps = V1 * V2 ;
+ 
+END
+ALGORITHM Vector
+VAR
+    tab : ARRAY_OF type[];
+    V1, V2 :INTEGER ; 
+       n: integer ;
+BEGIN
+for i from 0 to n do 
+    read(V1 ,V2) 
+     if DotProduct(V1 ,V2) != 0 then
+    for j from 0 to tab.length -1 step 2 do 
+    tab[j] = V1 ;
+    tab[j+1] =v2 ;
+    END_FOR 
+    ELSE 
+    write("deux vecteurs sont orthogonaux")
+    END_IF
+END
+ // partie 2 : fonction 
+
+    FUNCTION DotProduct(V1 , V2 :integer) : integer ;
+    VAR
+       ps: integer ;
+       psch : string ;
+    BEGIN
+        ps = V1 * V2 ;
+        RETURN ps ;
+    END
+  ALGORITHM Vector
+VAR
+    tab : ARRAY_OF type[];
+    V1, V2 :INTEGER ; 
+       n: integer ;
+       ortho= integer ;
+BEGIN
+for i from 0 to n do 
+    read(V1 ,V2) 
+     ortho : = DotProduct(V1, V2)  
+     IF ortho != 0 then 
+    FOR j from 0 to tab.length -1 step 2 do 
+    tab[j] = V1 ;
+    tab[j+1] =v2 ;
+    END_FOR 
+    ELSE 
+    write("deux vecteurs sont orthogonaux")
+    END_IF
+END  
+      
+   
+
