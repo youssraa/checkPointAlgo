@@ -1,0 +1,27 @@
+PROCEDURE trier(var tab : ARRAY_OF_TYPE[INTEGER])
+VAR
+    cart ,i,j,k : integer ; 
+BEGIN
+    FOR i FROM 0 TO tab.length-1 do 
+    IF tab[i] > tab[i+1] THEN 
+    tab[i] := tab[i+1] ;
+    tab[i+1] := tab[i] ;
+    END_IF
+    END_FOR
+END
+ALGORITHM sort_isert
+VAR
+   cart : INTEGER ;
+   tab : ARRAY_OF_TYPE[50];
+BEGIN 
+    write("donner les element des tableau" , tab) ;
+    trier (tab) ;
+    FOR i  FROM  tab.length-1  TO  STEP -1 DO
+    IF tab[i] < cart THEN 
+      FOR j FROM i TO 0 STEP -1  DO 
+      tab[j] :=  tab[j+1] ;
+      tab[j] := cart ;
+      END_FOR
+    END_IF 
+    END_FOR
+END
