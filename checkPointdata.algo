@@ -1,0 +1,104 @@
+ALGORITHM Comparer_chaines
+VAR
+ chaine1 : ARRAY_OF[10] ;
+ chaine2 : ARRAY_OF[10] ;
+ distinct : ARRAY_OF[10] ;
+ longueur1 , longueur2 , i,j ,k : integer ; 
+BEGIN
+ //La premiére methode 
+ i:=0;
+ j:=0;
+ k:=0;
+ readln("entreé la chaine n°: 1" , chaine1) 
+ readln("entreé la chaine n°: 2" , chaine2)
+ longueur1 := chaine1.lenght ;
+ longueur2:= chaine2.lenght ;
+
+    FOR i FROM 1 to longueur1 -1 
+        FOR j FROM 1 to longueur2 -1 
+             IF (chaine2[i] <> chaine1[j]) THEN
+                distinct[k] := chaine2[i];                
+             ELSE 
+             break;
+             END_IF
+             
+	     END-FOR        
+END-FOR	 
+   write("La somme des nombre distinct est : " Sum )
+END
+//solution 2 
+       ALGORITHM comp_chaines_hashtable
+VARIABLE
+tab1:ARRAY_Of integer[10];
+tab2:ARRAY_Of integer[10];
+htab : HASH_TABLE<CHAR,INTEGER>;
+key,sum,i,j,l,k:integer ;
+
+ 
+DEBUT
+    sum:=0; 
+       FOR I FROM 1 to tab1.length;
+       key:=1;
+       htab.insert(key,tab[i]);
+       END_FOR
+       FOR j FROM 0 to tab2.length;
+         FOR l FROM 0 to tab2.length;
+         if tab2[j]==lookup(tab2[j]=true) then
+         key=key+1;
+         else
+         htab.insert(key,tab[j]);
+         end_if
+END_FOR
+for K from 0 to htab.length;
+htab.get(1);
+END_FOR
+sum = sum + htab.get(1);
+//solution 1 : partie 2
+ALGORITHM 
+
+  VAR
+ chaine1 : ARRAY_OF[10] ;
+ chaine2 : ARRAY_OF[10] ;
+ distinct : ARRAY_OF[10] ;
+ i,j ,k : integer ; 
+BEGIN
+ i:=0;
+ j:=0;
+ k:=0;
+ readln("entreé la chaine n°: 1" , chaine1) 
+ readln("entreé la chaine n°: 2" , chaine2)
+ longueur1 := chaine1.lenght ;
+ longueur2:= chaine2.lenght ;
+  FOR i FROM 0 TO longeur1   DO   
+     FOR j FROM 0 TO longueur2   DO  
+     if( tab[i]== tab[j]) then
+         sum= sum+ tab[j]*2
+     END_IF
+     END_FOR
+  END_FOR
+  Write("la somme est ",sum)
+
+//2eme solution avec hash table
+       ALGORITHM Sum of overlapping elements/solution (2)
+VARIABLE
+tab1:ARRAY_Of integer[10];
+tab2:ARRAY_Of integer[10];
+htab : HASH_TABLE<CHAR,INTEGER>;
+key,sum,i,j,l:integer; 
+DEBUT
+       sum:=0;
+       FOR i FROM 1 to tab1.length;
+       key:=1;
+       htab.insert(key,tab[i]);
+       FOR j FROM 0 to tab2.length;
+         if tab1[i]==htab.lookup(tab2[j]=true) then
+         key := key +1 ;
+         else
+         htab.insert(key,tab[j]);
+         end_if
+END_FOR
+for l from 0 to htab.length;
+htab.get(2);
+sum=sum+ htab.get(2)*2
+END_FOR
+
